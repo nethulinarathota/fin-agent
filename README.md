@@ -162,5 +162,3 @@ This project demonstrates:
 ## 👤 Author
 
 Nethuli Narathota
-BSc Applied Data Science
-General Sir John Kotelawala Defence University
