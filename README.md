@@ -1,94 +1,166 @@
-# 💰 FinAgent v3 — AI Financial Intelligence Agent
+# 💰 FinAgent – Context-Aware AI Financial Intelligence Agent
 
-An autonomous, context-aware AI financial agent for students with variable income. Built with Streamlit + Claude (Anthropic API).
+## 📌 Overview
 
----
+FinAgent is a context-aware AI financial assistant that helps users manage personal finances by analyzing spending behavior, predicting future outcomes, and providing intelligent, personalized financial advice.
 
-## 🚀 Quick Setup
-
-### 1. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Add your API key (one-time setup)
-Open the `.env` file and replace the placeholder:
-```
-ANTHROPIC_API_KEY=your_actual_key_here
-```
-Get your key at: https://console.anthropic.com
-
-### 3. Run the app
-```bash
-python -m streamlit run app.py
-```
+Unlike traditional expense trackers, FinAgent integrates calendar events, behavioral trends, and predictive analytics to understand *why* spending happens and how it will evolve.
 
 ---
 
-## 📁 File Structure
+## 🎯 Problem Statement
 
-```
-finagent_v3/
-├── app.py              # Streamlit UI — all 8 pages
-├── data.py             # Data layer — JSON persistence, all CRUD + reset
-├── intelligence.py     # AI reasoning engine — 11 upgrade modules
-├── agent.py            # Claude API layer — prompts, chat, insights
-├── .env                # API key (never commit this)
-├── requirements.txt    # Dependencies
-└── data/               # Auto-created — stores all JSON files
-    ├── income.json
-    ├── expenses.json
-    ├── recurring.json
-    ├── events.json
-    ├── balances.json
-    └── settings.json
-```
+Managing personal finances becomes difficult when:
+
+* Income is irregular
+* Spending patterns are inconsistent
+* Events (holidays, birthdays, outings) disrupt budgeting
+
+Most existing tools only track expenses — they do not provide reasoning, forecasting, or context-aware insights.
 
 ---
 
-## ✨ Features
+## 💡 Solution
 
-| Feature | Description |
-|---|---|
-| 📊 Overview | Metrics, charts, alerts, goal progress, risk score |
-| 💰 Income | Variable income tracking (salary, freelance, gifts, etc.) |
-| 💳 Expenses | One-time expenses with optional sub-specification |
-| 🔁 Recurring | USD/LKR subscriptions, pause/resume, live USD rate |
-| 🗓 Calendar | Visual calendar with Sri Lankan public holidays + personal events |
-| 🏦 Balances | Bank + cash tracking, runway calculation |
-| 📋 Summary Table | Full income/expense/category tables with anomaly flags |
-| 🤖 AI Chat | Context-aware Claude agent with structured reasoning |
+FinAgent solves this by acting as an AI agent that:
+
+* Tracks financial data (income, expenses, balances)
+* Understands user behavior over time
+* Incorporates real-world events into analysis
+* Predicts future spending
+* Provides actionable, personalized advice
 
 ---
 
-## 🧠 AI Intelligence Modules (intelligence.py)
+## 🧠 AI Agent Capabilities
 
-| Module | Function |
-|---|---|
-| Adaptive Goal | `compute_safe_spending_limit()` — based on income history |
-| Event-Aware Prediction | `predict_monthly_spending()` — accounts for upcoming events |
-| Event Correlation | `analyze_event_spending_impact()` — links spending to events |
-| Anomaly Detection | `detect_spending_anomalies()` — flags 2x average transactions |
-| Runway Calculation | `calculate_runway_days()` — days until funds run out |
-| Goal Evaluation | `evaluate_goal()` — tracks safe limit usage |
-| Risk Score | `calculate_risk_score()` — 0-100 financial risk score |
-| Financial Summary | `build_financial_summary()` — full context for AI |
-| Weekly Insight | `generate_weekly_insight()` — AI weekly report |
+### 1. Memory
+
+* Stores all transactions, recurring expenses, and events
+* Maintains historical data for analysis
+
+### 2. Reasoning
+
+* Detects trends and anomalies in spending
+* Links spending spikes to calendar events
+
+### 3. Prediction
+
+* Forecasts end-of-month expenses
+* Estimates financial risk and overspending likelihood
+
+### 4. Context Awareness
+
+* Integrates Sri Lankan holidays and user-added events
+* Explains spending in real-world context
+
+### 5. Goal-Based Behavior
+
+* Uses adaptive spending limits (not fixed income-based budgeting)
+* Helps users stay within safe financial boundaries
 
 ---
 
-## 💡 Key Design Decisions
+## 🚀 Key Features
 
-- **No fixed income assumed** — the agent adapts to variable income patterns
-- **Safe spending limit** — derived from income history (70% of average), not a fixed budget
-- **Live USD rate** — auto-fetched from open.er-api.com on startup
-- **API key in .env** — no need to paste it in the UI every time
-- **Sample data reset** — click "Reset & Start Fresh" on the Overview to clear all demo data
-- **Name + greeting** — personalized with time-based greeting (morning/afternoon/evening)
+### 📊 Financial Dashboard
+
+* Income, expenses, net balance
+* Category-wise spending visualization
+* Daily and monthly trends
+
+### 💳 Expense Tracking
+
+* Categorized expense logging
+* Detailed descriptions and tagging
+
+### 🔁 Recurring Expenses
+
+* Monthly subscriptions (LKR/USD support)
+* Automatic cost estimation
+
+### 🗓 Smart Calendar
+
+* Displays:
+
+  * Public holidays
+  * Personal events
+  * Birthdays
+* Links events with spending behavior
+
+### 🔮 Predictive Analytics
+
+* Monthly spending forecasts
+* Event-adjusted projections
+
+### ⚠️ Intelligent Alerts
+
+* Overspending warnings
+* High-risk financial behavior detection
+* Upcoming event reminders
+
+### 💡 AI Financial Advisor
+
+* Chat-based financial assistant
+* Provides:
+
+  * spending insights
+  * savings strategies
+  * risk analysis
+  * event-based planning advice
 
 ---
 
-## 🏫 Assignment Info
-- Course: Data Science Applications and AI [LB3114]  
-- University: General Sir John Kotelawala Defence University  
-- Deadline: 30th April 2026
+## 🧠 Advanced Features (Distinction-Level)
+
+* Adaptive budgeting for irregular income
+* Event-spending correlation
+* Financial runway estimation
+* Anomaly detection in transactions
+* Financial risk scoring system
+
+---
+
+## 🛠️ Tech Stack
+
+* **Python**
+* **Streamlit** – UI framework
+* **Pandas** – data processing
+* **Plotly** – data visualization
+* Groq API / OpenAI-compatible client – AI reasoning engine
+
+---
+
+## 📊 Example Insights
+
+* “Your spending increased due to Avurudu celebrations.”
+* “At this rate, your funds will last 18 days.”
+* “You are likely to exceed your safe spending limit in 5 days.”
+
+---
+
+## 🎯 Learning Outcomes Achieved
+
+This project demonstrates:
+
+* Autonomous AI agent design
+* Integration of memory, reasoning, and prediction
+* Context-aware decision-making
+* Real-world problem solving using AI
+
+---
+
+## 📌 Future Improvements
+
+* Mobile app version
+* Bank API integration
+* Advanced ML-based prediction models
+* Multi-user support
+
+---
+
+## 👤 Author
+
+Nethuli Narathota
+BSc Applied Data Science
+General Sir John Kotelawala Defence University
